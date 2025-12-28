@@ -1,6 +1,6 @@
 
 import { Server } from 'socket.io';
-import { initSocket } from '../../../lib/socket';
+import { initSocket } from '../../lib/socket';
 
 const SocketHandler = (req, res) => {
   if (res.socket.server.io) {
