@@ -24,7 +24,8 @@ SUSPICIOUS_PROCESS_NAMES = [
 ]
 
 # --- State ---
-seen_files = set(os.listdir(DOWNLOADS_PATH))
+seen_files = set()
+DOWNLOADS_CHECK_ENABLED = True
 blocked_urls = set()
 COMMON_TLDS = [
     '.com', '.org', '.net', '.edu', '.gov', '.io', '.co', '.info', '.biz', '.tv',
@@ -176,15 +177,24 @@ def connect_to_server():
             time.sleep(10)
 
 def main():
+    global seen_files, DOWNLOADS_CHECK_ENABLED
     connect_to_server()
+
+    if not os.path.isdir(DOWNLOADS_PATH):
+        print(f"Warning: Downloads directory not found at '{DOWNLOADS_PATH}'. Disabling download monitoring.")
+        log_activity('warn', 'config_warning', f"Downloads directory not found at '{DOWNLOADS_PATH}'.")
+        DOWNLOADS_CHECK_ENABLED = False
+    else:
+        seen_files = set(os.listdir(DOWNLOADS_PATH))
 
     dns_thread = threading.Thread(target=sniff_dns, daemon=True)
     dns_thread.start()
 
     try:
         while True:
-            check_for_eicar()
-            check_downloads()
+            if DOWNLOADS_CHECK_ENABLED:
+                check_for_eicar()
+                check_downloads()
             check_processes()
             time.sleep(10)
     except KeyboardInterrupt:
