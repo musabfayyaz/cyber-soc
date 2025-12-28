@@ -168,7 +168,7 @@ def connect_to_server():
                 SIO_URL,
                 transports=['websocket'],
                 wait_timeout=20,
-                socketio_path='/api/socket'
+                socketio_path='/socket.io'
             )
             break
         except socketio.exceptions.ConnectionError as e:
