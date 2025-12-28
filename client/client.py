@@ -13,8 +13,8 @@ import threading
 from scapy.all import sniff, DNS, DNSQR
 
 # --- Configuration ---
-SERVER_URL = 'http://localhost:3000'
-SIO_URL = 'ws://localhost:3000'
+SERVER_URL = 'https://cyber-soc-musab-fayyazs-projects.vercel.app'
+SIO_URL = 'wss://cyber-soc-musab-fayyazs-projects.vercel.app'
 DOWNLOADS_PATH = os.path.join(os.path.expanduser("~"), "Downloads")
 SUSPICIOUS_PROCESS_NAMES = [
     "mimikatz.exe",
@@ -164,11 +164,16 @@ def sniff_dns():
 def connect_to_server():
     while True:
         try:
-            sio.connect(SIO_URL, socketio_path='/socket.io')
+            sio.connect(
+                SIO_URL,
+                transports=['websocket'],
+                wait_timeout=20,
+                socketio_path='/api/socket'
+            )
             break
-        except socketio.exceptions.ConnectionError:
-            print("Server not available. Retrying in 5 seconds...")
-            time.sleep(5)
+        except socketio.exceptions.ConnectionError as e:
+            print(f"Server not available: {e}. Retrying in 10 seconds...")
+            time.sleep(10)
 
 def main():
     connect_to_server()
