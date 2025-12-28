@@ -1,0 +1,159 @@
+You are a cyber security engineer, SOC analyst, and cloud-aware system architect
+designing a FIRST-SEMESTER academic project for the course
+“Introduction to Cyber Security”.
+
+Your task is to CREATE a COMPLETE, DEMONSTRABLE, SOC-LIKE PROJECT
+with documentation and safe demonstration materials.
+
+==================================================
+PROJECT OVERVIEW
+==================================================
+Project Name:
+Mini SOC – Cloud-Based Client–Server Cyber Monitoring System
+
+This project simulates a simplified Security Operations Center (SOC) to demonstrate:
+- Monitoring
+- Logging
+- Centralized visibility
+- Basic detection and response
+
+This is an EDUCATIONAL project only.
+
+==================================================
+ARCHITECTURE
+==================================================
+Client–Server model
+
+--------------------------------------------------
+CLIENT SIDE
+--------------------------------------------------
+- Runs on user machines
+- Collects:
+  - Recent downloads
+  - Suspicious activities (rule-based or simulated)
+- Sends logs to cloud server
+- Accepts commands from server
+- Executes demo actions:
+  - Alert user
+  - Stop suspicious process (simulation)
+  - Shutdown (demo only)
+
+--------------------------------------------------
+SERVER SIDE (CLOUD DEPLOYED)
+--------------------------------------------------
+- Deployed on a FREE cloud platform:
+  - Railway or Vercel (preferred)
+  - Or suggest an easier free alternative if better
+- Receives and stores client logs
+- Hosts a WEB-BASED ADMIN PORTAL
+- Single admin login
+- Dashboard features:
+  - Client list
+  - Individual activity views
+  - SOC-style logs and graphs
+  - Remote action buttons
+
+==================================================
+SECURITY & SOC FEATURES (SIMPLIFIED)
+==================================================
+- Detect malicious links:
+  - Static list OR free threat-intel API
+- Block malicious links (demo level)
+- Detect and stop known test malware samples
+  (harmless and industry-accepted)
+- Fetch SOC / cyber threat data from FREE APIs
+- Display threat data on dashboard
+
+==================================================
+SAFE DEMONSTRATION MATERIALS (MANDATORY)
+==================================================
+Provide SAFE, EDUCATIONAL samples ONLY, such as:
+- EICAR test string/file
+- AMTSO malware test URLs
+- Known phishing test domains (for demo)
+- Clearly label them as “TEST / NON-HARMFUL”
+
+DO NOT include real malware or live attack infrastructure.
+
+==================================================
+UI / UX DESIGN (VERY IMPORTANT)
+==================================================
+- Dark theme SOC dashboard
+- Futuristic / cyber-defense aesthetic
+- Panels, cards, charts, alerts
+- “Sci-fi SOC” visual impression
+- UI should look advanced even if backend is simple
+
+==================================================
+TECH STACK
+==================================================
+You decide:
+- Languages
+- Frameworks
+- Database
+- APIs
+
+BUT:
+- Must be FREE
+- Easy to deploy on Railway or Vercel
+- Easy to explain and demonstrate
+- First-semester appropriate
+
+==================================================
+DOCUMENTATION REQUIREMENT (.md FILE)
+==================================================
+Create a COMPLETE Markdown file that includes:
+
+## Project Introduction
+## Architecture Overview
+## Installation & Setup
+## Cloud Deployment Steps
+## How to Run Client & Server
+## Admin Portal Usage
+## Demonstration Guide
+- Step-by-step demo flow
+- Commands to run
+- Buttons to click
+- Expected output
+
+## Sample Malware & Malicious Links Used
+- Explain why they are safe
+- How they trigger detection
+
+## Incident Response Demonstration
+## Limitations
+## Ethical Disclaimer
+## Conclusion
+
+==================================================
+DELIVERABLES
+==================================================
+1. Client application
+2. Cloud-deployed server
+3. Admin dashboard
+4. Client-server communication
+5. SOC-style graphs
+6. Remote control actions
+7. Safe demo samples
+8. Complete `.md` usage & demo guide
+9. Deployment instructions
+
+==================================================
+IMPORTANT RULES
+==================================================
+- No real malware
+- No real exploitation
+- Educational simulation only
+- No exaggerated claims
+- Ethical, academic focus
+- Clean, explainable code
+
+==================================================
+FINAL GOAL
+==================================================
+The project should:
+- Look like a real SOC platform
+- Be cloud deployed
+- Impress evaluators visually
+- Demonstrate core cyber security concepts
+- Be easy to run, explain, and demonstrate live
