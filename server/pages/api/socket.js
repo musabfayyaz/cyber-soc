@@ -9,7 +9,7 @@ const SocketHandler = (req, res) => {
     console.log('Socket is initializing');
     const io = new Server(res.socket.server);
     res.socket.server.io = io;
-    initSocket(res.socket.server);
+    initSocket(io);
   }
   res.end();
 };

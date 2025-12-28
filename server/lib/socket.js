@@ -36,14 +36,8 @@ function loadData() {
 }
 
 
-export function initSocket(server) {
+export function initSocket(io) {
   loadData();
-
-  const io = new Server(server, {
-    cors: {
-      origin: '*',
-    },
-  });
 
   globalThis._io = io;
 
@@ -107,8 +101,6 @@ export function initSocket(server) {
       saveData();
     });
   });
-
-  return io;
 }
 
 export function getSocketIO() {

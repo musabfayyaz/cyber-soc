@@ -13,8 +13,8 @@ import threading
 from scapy.all import sniff, DNS, DNSQR
 
 # --- Configuration ---
-SERVER_URL = 'https://cyber-soc-musab-fayyazs-projects.vercel.app'
-SIO_URL = 'wss://cyber-soc-musab-fayyazs-projects.vercel.app'
+SERVER_URL = 'https://cyber-soc-production.up.railway.app'
+SIO_URL = 'wss://cyber-soc-production.up.railway.app'
 DOWNLOADS_PATH = os.path.join(os.path.expanduser("~"), "Downloads")
 SUSPICIOUS_PROCESS_NAMES = [
     "mimikatz.exe",
